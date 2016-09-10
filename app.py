@@ -36,10 +36,10 @@ def login():
     error = None
     if request.method == 'POST':
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = "Invalid credentials. Please try again."
+            error = "Invalid Credentials. Please try again."
         else:
             session['logged_in'] = True
-            flash('You were just loggin in')
+            flash('You were just logging in')
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
 
@@ -47,7 +47,7 @@ def login():
 @login_required
 def logout():
     session.pop('logged_in', None)
-    flash('You were just logout')
+    flash('You were just logged out')
     return redirect(url_for('welcome'))
 
 def connect_db():

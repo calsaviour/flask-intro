@@ -22,10 +22,15 @@ Deploy db. ensure psycopg2 is installed
 
 
 
-Migrating db
+Migrating local db
 1. install flask migrate
 2. create file manage.py, add the necessary configuration
 3. run python manage.py db init
 4. update the models.py
 5. run python manage.py db migrate, to generate schema version
 6. run python manage.py db upgrade
+
+Migrating production db
+1. push lastest changes from migrating local db to ProductionConfig
+2. run heroku run python manage.py db upgrade
+3. connect to production db, run  heroku pg:psql

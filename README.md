@@ -19,3 +19,13 @@ Check db is created
 
 Deploy db. ensure psycopg2 is installed
 5. heroku run python db_create.py
+
+
+
+Migrating db
+1. install flask migrate
+2. create file manage.py, add the necessary configuration
+3. run python manage.py db init
+4. update the models.py
+5. run python manage.py db migrate, to generate schema version
+6. run python manage.py db upgrade

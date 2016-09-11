@@ -13,5 +13,9 @@ Created postgresql-shaped-74192 as DATABASE_URL
 run the deployed app
 3. heroku run python app.py   
 
+
 Check db is created
 4. heroku config | grep HEROKU_POSTGRESQL
+
+Deploy db. ensure psycopg2 is installed
+5. heroku run python db_create.py
